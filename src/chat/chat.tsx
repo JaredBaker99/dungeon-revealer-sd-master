@@ -293,13 +293,6 @@ export const Chat: React.FC<{
         <Stack height="100%">
           <ChatMessages chat={data} />
           <ChatTextArea />
-          <Button.Tertiary
-            small
-            onClick={toggleShowDiceRollNotes}
-            style={{ marginTop: 8 }}
-          >
-            <Icon.Dice boxSize="16px" /> <span> Dice Roll Notes</span>
-          </Button.Tertiary>
         </Stack>
       ) : mode === "user" ? (
         <div style={{ marginTop: 16 }}>
