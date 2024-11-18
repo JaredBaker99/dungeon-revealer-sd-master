@@ -119,6 +119,7 @@ const PlayerMap = ({
   const updateToken = React.useCallback(
     ({ id, ...updates }) => {
       if (currentMap.data?.activeMap) {
+        console.log("updateToken called with:", { id, updates });
         fetch(`/map/${currentMap.data.activeMap.id}/token/${id}`, {
           method: "PATCH",
           headers: {
@@ -325,6 +326,20 @@ const PlayerMap = ({
                         >
                           <Icon.BookOpen boxSize="20px" />
                           <Icon.Label>Notes</Icon.Label>
+                        </Toolbar.LongPressButton>
+                      </Toolbar.Item>
+                      <Toolbar.Item isActive>
+                        <Toolbar.LongPressButton
+                          onClick={() => {
+                            noteWindowActions.showNoteInWindow(
+                              null,
+                              "note-editor",
+                              true
+                            );
+                          }}
+                        >
+                          <Icon.BookOpen boxSize="20px" />
+                          <Icon.Label>Test</Icon.Label>
                         </Toolbar.LongPressButton>
                       </Toolbar.Item>
                     </Toolbar.Group>

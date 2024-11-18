@@ -5,6 +5,8 @@ import { bootstrapServer } from "./server";
 import { getEnv } from "./env";
 import type { Socket } from "net";
 
+import "../scripts/auto-downloads";
+
 const env = getEnv(process.env);
 
 const getPublicInterfaces = () => {

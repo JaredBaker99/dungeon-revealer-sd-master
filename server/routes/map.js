@@ -316,6 +316,13 @@ module.exports = ({ roleMiddleware, maps, settings, emitter }) => {
       };
     }
 
+    console.log(
+      `Updating token '${req.params.tokenId}' on map '${req.params.id}' with updates:`,
+      updates
+    );
+
+    // This is where we can have a function that calls a script to download the map files. This is triggered when a player moves a token.
+
     maps
       .updateToken(map.id, req.params.tokenId, updates)
       .then(({ map }) => {
