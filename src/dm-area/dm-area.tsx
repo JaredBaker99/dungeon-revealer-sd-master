@@ -161,6 +161,7 @@ const Content = ({
 
   const updateToken = React.useCallback(
     (id: string, updates: TokenPartial) => {
+      console.log("updateToken called with:", { id, updates });
       localFetch(`/map/${loadedMapId}/token/${id}`, {
         method: "PATCH",
         headers: {

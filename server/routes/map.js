@@ -316,6 +316,7 @@ module.exports = ({ roleMiddleware, maps, settings, emitter }) => {
       };
     }
 
+    console.log(req.role);
     console.log(
       `Updating token '${req.params.tokenId}' on map '${req.params.id}' with updates:`,
       updates
